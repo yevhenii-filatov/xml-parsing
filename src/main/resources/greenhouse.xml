@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<flower>
+    <plant>
+        <name>First plant</name>>
+        <soil>PODZOLIC</soil>
+        <origin>Ukraine</origin>
+        <visualParameters>
+            <stemColor>GREEN</stemColor>
+            <leafColor>BLACK</leafColor>
+            <size>10</size>
+        </visualParameters>
+        <growingTips>
+            <temperature>15</temperature>
+            <lovesLight>false</lovesLight>
+            <watering>2000</watering>
+        </growingTips>
+        <multiplyingType>LEAF</multiplyingType>
+    </plant>
+
+    <plant>
+        <name>Second plant</name>>
+        <soil>GROUND</soil>
+        <origin>China</origin>
+        <visualParameters>
+            <stemColor>RED</stemColor>
+            <leafColor>GREEN</leafColor>
+            <size>20</size>
+        </visualParameters>
+        <growingTips>
+            <temperature>05</temperature>
+            <lovesLight>true</lovesLight>
+            <watering>200</watering>
+        </growingTips>
+        <multiplyingType>STEM</multiplyingType>
+    </plant>
+
+    <plant>
+        <name>Third plant</name>>
+        <soil>SOD_PODZOLIC</soil>
+        <origin>France</origin>
+        <visualParameters>
+            <stemColor>BLACK</stemColor>
+            <leafColor>WHITE</leafColor>
+            <size>20</size>
+        </visualParameters>
+        <growingTips>
+            <temperature>05</temperature>
+            <lovesLight>true</lovesLight>
+            <watering>200</watering>
+        </growingTips>
+        <multiplyingType>SEED</multiplyingType>
+    </plant>
+</flower>
