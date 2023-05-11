@@ -12,6 +12,15 @@ public class VisualParameters {
     private Color leafColor;
     private Integer size;
 
+    public VisualParameters() {
+    }
+
+    public VisualParameters(Color stemColor, Color leafColor, Integer size) {
+        this.stemColor = stemColor;
+        this.leafColor = leafColor;
+        this.size = size;
+    }
+
     public Color getStemColor() {
         return stemColor;
     }

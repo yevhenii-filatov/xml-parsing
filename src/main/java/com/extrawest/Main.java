@@ -1,5 +1,6 @@
 package com.extrawest;
 
+import com.extrawest.handler.FlowerDOMHandler;
 import com.extrawest.handler.FlowerSAXHandler;
 import com.extrawest.model.Flower;
 import org.xml.sax.SAXException;
@@ -45,8 +46,10 @@ public class Main {
         // TODO
     }
 
-    private static void runDOM() {
-        // TODO
+    private static void runDOM() throws IOException {
+        FlowerDOMHandler flowerDOMHandler = new FlowerDOMHandler();
+        Flower flower = flowerDOMHandler.getFlower(XML_FILE_URI);
+        System.out.println(flower);
     }
 
     private static void runSAX() throws ParserConfigurationException, SAXException, IOException {
@@ -54,8 +57,8 @@ public class Main {
         SAXParser saxParser = factory.newSAXParser();
         FlowerSAXHandler flowerSAXHandler = new FlowerSAXHandler();
         saxParser.parse(XML_FILE_URI, flowerSAXHandler);
-        Flower result = flowerSAXHandler.getFlower();
-        System.out.println(result.toString());
+        Flower flower = flowerSAXHandler.getFlower();
+        System.out.println(flower);
         validateSAX();
     }
 

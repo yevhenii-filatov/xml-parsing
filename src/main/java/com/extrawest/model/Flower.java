@@ -1,5 +1,6 @@
 package com.extrawest.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
 
@@ -9,7 +10,14 @@ import java.util.StringJoiner;
  */
 
 public class Flower {
-    private List<Plant> plants;
+    private List<Plant> plants = new ArrayList<>();
+
+    public Flower(List<Plant> plants) {
+        this.plants = plants;
+    }
+
+    public Flower() {
+    }
 
     public List<Plant> getPlants() {
         return plants;

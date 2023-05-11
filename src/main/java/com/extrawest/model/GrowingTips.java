@@ -12,6 +12,15 @@ public class GrowingTips {
     private Boolean lovesLight;
     private Integer watering;
 
+    public GrowingTips() {
+    }
+
+    public GrowingTips(Integer temperature, Boolean lovesLight, Integer watering) {
+        this.temperature = temperature;
+        this.lovesLight = lovesLight;
+        this.watering = watering;
+    }
+
     public Integer getTemperature() {
         return temperature;
     }

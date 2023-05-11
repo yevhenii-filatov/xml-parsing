@@ -4,9 +4,10 @@ import com.extrawest.model.*;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
-import java.util.ArrayList;
 import java.util.function.Consumer;
 import java.util.function.Function;
+
+import static com.extrawest.model.FlowerConstants.*;
 
 /**
  * @author Yevhenii Filatov
@@ -14,23 +15,6 @@ import java.util.function.Function;
  */
 
 public class FlowerSAXHandler extends DefaultHandler {
-    private static final String PLANT = "plant";
-    private static final String NAME = "name";
-    private static final String SOIL = "soil";
-    private static final String ORIGIN = "origin";
-
-    private static final String VISUAL_PARAMETERS = "visualParameters";
-    private static final String STEM_COLOR = "stemColor";
-    private static final String LEAF_COLOR = "leafColor";
-    private static final String PLANT_SIZE = "size";
-
-    private static final String GROWING_TIPS = "growingTips";
-    private static final String TEMPERATURE = "temperature";
-    private static final String LOVES_LIGHT = "lovesLight";
-    private static final String WATERING = "watering";
-
-    private static final String MULTIPLYING_TYPE = "multiplyingType";
-
     private Flower flower;
     private StringBuilder elementValue;
 
@@ -46,7 +30,6 @@ public class FlowerSAXHandler extends DefaultHandler {
     @Override
     public void startDocument() {
         this.flower = new Flower();
-        this.flower.setPlants(new ArrayList<>());
     }
 
     @Override

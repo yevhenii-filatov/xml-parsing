@@ -15,6 +15,18 @@ public class Plant {
     private GrowingTips growingTips;
     private MultiplyingType multiplyingType;
 
+    public Plant() {
+    }
+
+    public Plant(String name, Soil soil, String origin, VisualParameters visualParameters, GrowingTips growingTips, MultiplyingType multiplyingType) {
+        this.name = name;
+        this.soil = soil;
+        this.origin = origin;
+        this.visualParameters = visualParameters;
+        this.growingTips = growingTips;
+        this.multiplyingType = multiplyingType;
+    }
+
     public String getName() {
         return name;
     }
