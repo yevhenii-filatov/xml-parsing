@@ -9,6 +9,7 @@ import org.jsoup.nodes.TextNode;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -28,6 +29,7 @@ public class FlowerDOMParser {
            .stream()
            .map(this::plant)
            .filter(Objects::nonNull)
+           .sorted(Comparator.comparing(Plant::getName))
            .toList();
         return new Flower(plants);
     }

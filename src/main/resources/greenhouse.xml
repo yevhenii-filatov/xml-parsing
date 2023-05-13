@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <flower>
     <plant>
-        <name>First plant</name>>
-        <soil>PODZOLIC</soil>
-        <origin>Ukraine</origin>
-        <visualParameters>
-            <stemColor>GREEN</stemColor>
-            <leafColor>BLACK</leafColor>
-            <size>10</size>
-        </visualParameters>
-        <growingTips>
-            <temperature>15</temperature>
-            <lovesLight>false</lovesLight>
-            <watering>2000</watering>
-        </growingTips>
-        <multiplyingType>LEAF</multiplyingType>
-    </plant>
-
-    <plant>
         <name>Second plant</name>>
         <soil>GROUND</soil>
         <origin>China</origin>
@@ -32,6 +15,23 @@
             <watering>200</watering>
         </growingTips>
         <multiplyingType>STEM</multiplyingType>
+    </plant>
+
+    <plant>
+        <name>First plant</name>>
+        <soil>PODZOLIC</soil>
+        <origin>Ukraine</origin>
+        <visualParameters>
+            <stemColor>GREEN</stemColor>
+            <leafColor>BLACK</leafColor>
+            <size>10</size>
+        </visualParameters>
+        <growingTips>
+            <temperature>15</temperature>
+            <lovesLight>false</lovesLight>
+            <watering>2000</watering>
+        </growingTips>
+        <multiplyingType>LEAF</multiplyingType>
     </plant>
 
     <plant>

@@ -4,6 +4,7 @@ import com.extrawest.model.*;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.util.Comparator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -60,6 +61,11 @@ public class FlowerSAXParser extends DefaultHandler {
             case LOVES_LIGHT -> set(lastPlant.getGrowingTips()::setLovesLight, Boolean::valueOf);
             case WATERING -> set(lastPlant.getGrowingTips()::setWatering, Integer::valueOf);
         }
+    }
+
+    @Override
+    public void endDocument() {
+        this.flower.getPlants().sort(Comparator.comparing(Plant::getName));
     }
 
     private void set(Consumer<String> setter) {

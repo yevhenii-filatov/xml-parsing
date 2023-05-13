@@ -12,6 +12,7 @@ import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -41,6 +42,7 @@ public class FlowerSTAXParser {
                 processStartElementEvent(currentEvent.asStartElement(), reader);
             }
         }
+        flower.getPlants().sort(Comparator.comparing(Plant::getName));
         return flower;
     }
 
