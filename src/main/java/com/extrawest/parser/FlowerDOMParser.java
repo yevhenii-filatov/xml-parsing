@@ -1,4 +1,4 @@
-package com.extrawest.handler;
+package com.extrawest.parser;
 
 import com.extrawest.model.*;
 import org.apache.commons.lang3.StringUtils;
@@ -21,7 +21,7 @@ import static com.extrawest.model.FlowerConstants.*;
  * @since 5/11/23
  */
 
-public class FlowerDOMHandler {
+public class FlowerDOMParser {
     public Flower getFlower(String xmlFilePath) throws IOException {
         List<Plant> plants = Jsoup.parse(new File(xmlFilePath))
            .select(PLANT)

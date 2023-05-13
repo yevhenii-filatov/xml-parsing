@@ -1,4 +1,4 @@
-package com.extrawest.handler;
+package com.extrawest.parser;
 
 import com.extrawest.model.*;
 import org.xml.sax.Attributes;
@@ -14,7 +14,7 @@ import static com.extrawest.model.FlowerConstants.*;
  * @since 5/11/23
  */
 
-public class FlowerSAXHandler extends DefaultHandler {
+public class FlowerSAXParser extends DefaultHandler {
     private Flower flower;
     private StringBuilder elementValue;
 
