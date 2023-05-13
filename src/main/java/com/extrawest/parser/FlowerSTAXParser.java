@@ -1,20 +1,11 @@
 package com.extrawest.parser;
 
 import com.extrawest.model.flower.*;
-import org.apache.commons.lang3.StringUtils;
 
-import javax.xml.XMLConstants;
 import javax.xml.stream.XMLEventReader;
-import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.events.Characters;
 import javax.xml.stream.events.StartElement;
-import javax.xml.stream.events.XMLEvent;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.Comparator;
-import java.util.function.Consumer;
-import java.util.function.Function;
 
 import static com.extrawest.model.flower.FlowerConstants.*;
 
@@ -23,32 +14,13 @@ import static com.extrawest.model.flower.FlowerConstants.*;
  * @since 5/13/23
  */
 
-public class FlowerSTAXParser {
-    private final XMLInputFactory xmlInputFactory;
-    private final Flower flower;
+public class FlowerSTAXParser extends AbstractSTAXParser<Flower> {
+    private final Flower result = new Flower();
 
-    public FlowerSTAXParser() {
-        xmlInputFactory = XMLInputFactory.newInstance();
-        xmlInputFactory.setProperty(XMLConstants.ACCESS_EXTERNAL_DTD, StringUtils.EMPTY);
-        xmlInputFactory.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, StringUtils.EMPTY);
-        flower = new Flower();
-    }
-
-    public Flower getFlower(String xmlFilePath) throws IOException, XMLStreamException {
-        XMLEventReader reader = xmlInputFactory.createXMLEventReader(new FileInputStream(xmlFilePath));
-        while (reader.hasNext()) {
-            XMLEvent currentEvent = reader.nextEvent();
-            if (currentEvent.isStartElement()) {
-                processStartElementEvent(currentEvent.asStartElement(), reader);
-            }
-        }
-        flower.getPlants().sort(Comparator.comparing(Plant::getName));
-        return flower;
-    }
-
-    private void processStartElementEvent(StartElement startElement, XMLEventReader reader) throws XMLStreamException {
+    @Override
+    public void processStartElementEvent(StartElement startElement, XMLEventReader reader) throws XMLStreamException {
         switch (startElement.getName().getLocalPart()) {
-            case PLANT -> flower.getPlants().add(new Plant());
+            case PLANT -> result.getPlants().add(new Plant());
             case VISUAL_PARAMETERS -> lastPlant().setVisualParameters(new VisualParameters());
             case GROWING_TIPS -> lastPlant().setGrowingTips(new GrowingTips());
 
@@ -66,18 +38,18 @@ public class FlowerSTAXParser {
         }
     }
 
-    private void stepNextAndSet(XMLEventReader reader, Consumer<String> setter) throws XMLStreamException {
-        Characters nextEvent = reader.nextEvent().asCharacters();
-        setter.accept(nextEvent.toString());
+    @Override
+    public Flower getResult() {
+        return result;
     }
 
-    private <T> void stepNextAndSet(XMLEventReader reader, Consumer<T> setter, Function<String, T> valueTransformer) throws XMLStreamException {
-        Characters nextEvent = reader.nextEvent().asCharacters();
-        setter.accept(valueTransformer.apply(nextEvent.getData()));
+    @Override
+    protected void sortResult() {
+        result.getPlants().sort(Comparator.comparing(Plant::getName));
     }
 
     private Plant lastPlant() {
-        int lastPlantIndex = flower.getPlants().size() - 1;
-        return flower.getPlants().get(lastPlantIndex);
+        int lastPlantIndex = result.getPlants().size() - 1;
+        return result.getPlants().get(lastPlantIndex);
     }
 }

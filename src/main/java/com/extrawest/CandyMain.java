@@ -17,7 +17,7 @@ public class CandyMain {
 
     public static void main(String[] args) throws XMLStreamException, FileNotFoundException {
         CandySTAXParser candySTAXParser = new CandySTAXParser();
-        List<Candy> candies = candySTAXParser.getCandies(XML_FILE_URI);
+        List<Candy> candies = candySTAXParser.parse(XML_FILE_URI);
         candies.forEach(System.out::println);
     }
 }

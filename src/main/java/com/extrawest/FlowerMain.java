@@ -47,7 +47,7 @@ public class FlowerMain {
 
     private static void runSTAX() throws XMLStreamException, IOException {
         FlowerSTAXParser flowerSTAXParser = new FlowerSTAXParser();
-        Flower flower = flowerSTAXParser.getFlower(XML_FILE_URI);
+        Flower flower = flowerSTAXParser.parse(XML_FILE_URI);
         System.out.println(flower);
     }
 
