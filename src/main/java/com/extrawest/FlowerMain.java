@@ -1,6 +1,6 @@
 package com.extrawest;
 
-import com.extrawest.model.Flower;
+import com.extrawest.model.flower.Flower;
 import com.extrawest.parser.FlowerDOMParser;
 import com.extrawest.parser.FlowerSAXParser;
 import com.extrawest.parser.FlowerSTAXParser;
@@ -20,7 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Main {
+public class FlowerMain {
     private static final String XML_FILE_URI = "src/main/resources/greenhouse.xml";
     private static final String XSD_FILE_URI = "src/main/resources/greenhouse.xsd";
     private static final String SAX = "SAX";

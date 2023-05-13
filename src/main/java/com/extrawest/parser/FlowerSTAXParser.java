@@ -1,6 +1,6 @@
 package com.extrawest.parser;
 
-import com.extrawest.model.*;
+import com.extrawest.model.flower.*;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.xml.XMLConstants;
@@ -16,7 +16,7 @@ import java.util.Comparator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-import static com.extrawest.model.FlowerConstants.*;
+import static com.extrawest.model.flower.FlowerConstants.*;
 
 /**
  * @author Yevhenii Filatov

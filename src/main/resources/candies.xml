@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<candies>
+    <candy allowedForDiabetic="true" containsAllergens="false" containsSugar="false">
+        <name>Snickers</name>
+        <weight>100</weight>
+        <category>CHOCOLATE</category>
+        <price>
+            <amount>30</amount>
+            <currency>UAH</currency>
+        </price>
+        <manufacturer>
+            <official-name>Mars, Incorporated</official-name>
+            <country>United States</country>
+            <address>6885 Elm Street McLean, VA 22101</address>
+            <phone>+1 703-821-4900</phone>
+        </manufacturer>
+    </candy>
+    <candy allowedForDiabetic="false" containsAllergens="true" containsSugar="true">
+        <name>Chupa Chups</name>
+        <weight>50</weight>
+        <category>LOLLIPOP</category>
+        <price>
+            <amount>1</amount>
+            <currency>USD</currency>
+        </price>
+        <manufacturer>
+            <official-name>Chupa Chups</official-name>
+            <country>Spain</country>
+            <address>Polígono Industrial Sector Serra, Carrer de les Masies, 16</address>
+            <phone>+34 91 1234 567</phone>
+        </manufacturer>
+    </candy>
+    <candy allowedForDiabetic="true" containsAllergens="false" containsSugar="false">
+        <name>Gummy Bear</name>
+        <weight>20</weight>
+        <category>CHEWING</category>
+        <price>
+            <amount>0.5</amount>
+            <currency>EUR</currency>
+        </price>
+        <manufacturer>
+            <official-name>Land Of The Gummies, LLC</official-name>
+            <country>United States</country>
+            <address>1925 W Main St, Ephrata, PA 17522, USA</address>
+            <phone>+1-844-468-4866</phone>
+        </manufacturer>
+    </candy>
+    <candy allowedForDiabetic="true" containsAllergens="true" containsSugar="false">
+        <name>Lotte Coffy Bite</name>
+        <weight>75</weight>
+        <category>TOFFEE</category>
+        <price>
+            <amount>0.99</amount>
+            <currency>USD</currency>
+        </price>
+        <manufacturer>
+            <official-name>Lotte India Corporation Ltd.</official-name>
+            <country>India</country>
+            <address>4/169, Rajiv Gandhi Salai (OMR Road), Kandanchavadi, Chennai - 600096 TamilNadu</address>
+            <phone>+9104445458888</phone>
+        </manufacturer>
+    </candy>
+</candies>

@@ -1,6 +1,6 @@
 package com.extrawest.parser;
 
-import com.extrawest.model.*;
+import com.extrawest.model.flower.*;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
@@ -15,7 +15,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 
-import static com.extrawest.model.FlowerConstants.*;
+import static com.extrawest.model.flower.FlowerConstants.*;
 
 /**
  * @author Yevhenii Filatov

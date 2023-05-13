@@ -1,6 +1,6 @@
 package com.extrawest.parser;
 
-import com.extrawest.model.*;
+import com.extrawest.model.flower.*;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -8,7 +8,7 @@ import java.util.Comparator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-import static com.extrawest.model.FlowerConstants.*;
+import static com.extrawest.model.flower.FlowerConstants.*;
 
 /**
  * @author Yevhenii Filatov

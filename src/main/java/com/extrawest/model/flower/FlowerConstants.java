@@ -1,4 +1,4 @@
-package com.extrawest.model;
+package com.extrawest.model.flower;
 
 /**
  * @author Yevhenii Filatov
