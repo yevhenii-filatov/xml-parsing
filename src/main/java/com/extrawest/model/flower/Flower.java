@@ -1,5 +1,10 @@
 package com.extrawest.model.flower;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
@@ -9,7 +14,10 @@ import java.util.StringJoiner;
  * @since 5/11/23
  */
 
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Flower {
+    @XmlElement(name = "plant")
     private List<Plant> plants = new ArrayList<>();
 
     public Flower(List<Plant> plants) {

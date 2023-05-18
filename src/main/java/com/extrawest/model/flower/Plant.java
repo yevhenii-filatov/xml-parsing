@@ -1,5 +1,9 @@
 package com.extrawest.model.flower;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+
 import java.util.StringJoiner;
 
 /**
@@ -7,11 +11,16 @@ import java.util.StringJoiner;
  * @since 5/11/23
  */
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Plant {
     private String name;
     private Soil soil;
     private String origin;
+
+    @XmlElement(name = "visualParameters")
     private VisualParameters visualParameters;
+
+    @XmlElement(name = "growingTips")
     private GrowingTips growingTips;
     private MultiplyingType multiplyingType;
 

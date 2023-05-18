@@ -1,5 +1,8 @@
 package com.extrawest.model.flower;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+
 import java.util.StringJoiner;
 
 /**
@@ -7,6 +10,7 @@ import java.util.StringJoiner;
  * @since 5/11/23
  */
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class VisualParameters {
     private Color stemColor;
     private Color leafColor;

@@ -4,6 +4,9 @@ import com.extrawest.model.flower.Flower;
 import com.extrawest.parser.FlowerDOMParser;
 import com.extrawest.parser.FlowerSAXParser;
 import com.extrawest.parser.FlowerSTAXParser;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Unmarshaller;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
@@ -26,9 +29,10 @@ public class FlowerMain {
     private static final String SAX = "SAX";
     private static final String DOM = "DOM";
     private static final String STAX = "STAX";
+    private static final String JAXB = "JAXB";
     private static final String EXIT = "exit";
 
-    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, XMLStreamException {
+    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, XMLStreamException, JAXBException {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.print("Choose an option for parsing: SAX/DOM/STAX or exit: ");
@@ -37,12 +41,21 @@ public class FlowerMain {
                 case SAX -> runSAX();
                 case DOM -> runDOM();
                 case STAX -> runSTAX();
+                case JAXB -> runJAXB();
                 case EXIT -> {
                     return;
                 }
                 default -> System.out.println("Wrong input, try again");
             }
         }
+    }
+
+    private static void runJAXB() throws JAXBException {
+        File file = new File(XML_FILE_URI);
+        JAXBContext jaxbContext = JAXBContext.newInstance(Flower.class);
+        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+        Flower flower = (Flower) jaxbUnmarshaller.unmarshal(file);
+        System.out.println(flower);
     }
 
     private static void runSTAX() throws XMLStreamException, IOException {
